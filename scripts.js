@@ -1,7 +1,24 @@
-const size = 16;
+const btnGrid = document.querySelector('.ask-user');
 const btnBlack = document.querySelector('.black-btn');
 const btnRainbow = document.querySelector('.rainbow-color');
 const btnClear = document.querySelector('.clear');
+
+function setGrid() {
+  btnGrid.addEventListener('click', () => {
+  let size = parseInt(prompt("Enter size number:"));
+  if (size > 100) {
+    alert("You can't choose value superior to 100. Default value applied")
+    size = 16;
+    
+  }
+  let container = document.querySelector('.container');
+  container.textContent = "";
+  buildGrid(size);
+});
+}
+
+
+
 
 function buildGrid(sizeSquare) {
     let container = document.querySelector('.container');
@@ -14,8 +31,8 @@ function buildGrid(sizeSquare) {
             square.classList.add('square');
             square.style.boxSizing = "border-box"
             square.style.border = '1px black solid';
-            square.style.height = `${containerHeight / size}px`;
-            square.style.width = `${containerWidth / size}px`;
+            square.style.height = `${containerHeight / sizeSquare}px`;
+            square.style.width = `${containerWidth / sizeSquare}px`;
             container.appendChild(square);
             btnBlack.addEventListener('click', drawBlack);
             btnRainbow.addEventListener('click', drawRainbow);
@@ -92,5 +109,5 @@ function clearGrid() {
     }
     
 }
- 
-buildGrid(size);
+
+setGrid()
