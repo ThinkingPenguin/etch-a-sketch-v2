@@ -1,0 +1,50 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    padding: 250px;
+    margin: 0;
+    gap: 15px;
+}
+
+.right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+}
