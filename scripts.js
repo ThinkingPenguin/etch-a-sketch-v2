@@ -8,7 +8,7 @@ let size = 0;
 
 function setGrid() {
   btnGrid.addEventListener('click', () => {
-  let size = parseInt(prompt("Enter size number:"));
+  size = parseInt(prompt("Enter size number:"));
   if (size > 100) {
     alert("You can't choose value superior to 100. Default value applied")
     size = 16;
@@ -63,8 +63,12 @@ function killOpacity(item){
 
   else if (penType == "clear"){
     item.classList.remove('shade');
-    item.style.backgroundColor = 'white';
+    item.style.backgroundColor = '';
     item.style.opacity = '';
+    let cont = document.querySelector('.container');
+    while(cont.firstChild){
+      cont.removeChild(cont.firstChild);
+    }
   }
 
   else if (penType == 'shade') { // turns cell 0.1
@@ -152,6 +156,7 @@ function clearGrid() {
   items.forEach(item => {
     killOpacity(item);
   });
+  buildGrid(size);
 
 }
 
